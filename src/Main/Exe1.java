@@ -23,16 +23,11 @@ public class Exe1 {
         System.out.println("a + b = " + (a + b));
         System.out.println("a - b = " + (a - b));
         System.out.println("a * b = " + a * b);
-        if (b != 0) {
-            System.out.println("a / b = " + (double)a / (double)b);
-        } else {
-            System.out.println("Деление на ноль невозможно.");
-        }
-
-        if (a != 0) {
-            System.out.println("b / a = " + (double)b / (double)a);
-        } else {
-            System.out.println("Деление на ноль невозможно.");
+        // Деление с обработкой исключений
+        try {
+            System.out.println("Деление: " + (a / b));
+        } catch (ArithmeticException e) {
+            System.out.println("Ошибка: Деление на ноль");
         }
 
         scanner.close();
